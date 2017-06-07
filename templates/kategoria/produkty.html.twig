@@ -1,0 +1,14 @@
+{% extends "layout.html.twig" %}
+
+{% block body %}
+	<div class="row">
+			<div class="col-xs-9">
+				<h2>Produkty z kategorii {{kategoria.kategoria}}</h2>
+				{{ produkty|raw}}
+			</div>
+			<div class="col-xs-3">
+				<h2>Koszyk</h2>
+				{% include "koszyk.html.twig"%}
+			</div>
+		</div>
+{% endblock %}

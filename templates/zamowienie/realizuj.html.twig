@@ -1,0 +1,47 @@
+{% extends "layout.html.twig"%}
+
+{% block body %}
+
+<div class="row">
+	<div class="col-xs-12">
+	<h2>Zamowienie</h2>
+	
+	<h3>Zawartosc koszyka</h3>
+	
+	<table class = "table table-striped">
+		<tbody>
+			{% for produkt in produkty %}
+				
+				<tr>
+					<td>{{produkt.nazwa}}</td>
+					<td>{{produkt.cena|number_format(2)}}</td>
+					<td>{{produkt.liczba_sztuk}}</td>
+					<td>{{produkt.wartosc|number_format(2)}}</td>
+				</tr>
+			{%  endfor %}
+			
+		</tbody>
+	</table>
+	<hr/>
+	
+	<div class="pull-right"><h3>Wartosc zamowienia: {{wartosc_zamowienia|number_format(2)}} zł</h3></div>
+	<hr/>
+		<hr/>
+			<hr/>
+				<hr/>
+				
+	<div>
+	<form action="index.php" action="index.php" method="post">
+		<input type="hidden" name="akcja" value="zamowienie-zapisz"/>
+		<label for="email" ">Adres email</label>
+		<input type="email" name= "email" id="email" class = "form-control/>
+		<label for="adres" >Adres do wyslania</label>
+		<textarea  name= "adres" id="adres" class = "form-control"/></textarea>
+		<input type="submit" value= "Zapisz zamowienie" class= "btn btn-success" >
+		
+	</form>
+	</div>
+	</div>
+</div>
+
+{%endblock%}

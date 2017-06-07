@@ -1,0 +1,11 @@
+{% if session.koszyk|length > 0%}
+	Liczba produktow w koszyku: {{session.koszyk|length}}
+	
+	<br/>
+	
+	<a href="index.php?akcja=zamowienie-realizuj">Realizuj zamowienie</a>
+	<br/>
+	<a href="index.php?akcja=koszyk-kasuj">Kasuj koszyk</a>
+{% else %}
+	Twoj koszyk jest pusty
+{% endif %}

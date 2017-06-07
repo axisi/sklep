@@ -1,0 +1,77 @@
+Ala ma kota
+
+<br/>
+
+Moje imie to {{ imie }}
+
+<br/>
+
+Adres: {{ tab2.adres }}
+
+<br/>
+
+Tab: {{ tab[0] }}
+
+{# komentarz twig #}
+<!-- komentarz html -->
+
+
+<br/>
+
+Liczba elementow w tab: {{ tab|length }}
+<br/>
+{% if imie == 'ala' %}
+	Imie jest rowne Ala
+{% endif %}
+
+<br/>
+{% if tab is empty %}
+	tablica jest pusta
+{% else %}
+	tablica nie jest pusta
+{% endif %}
+<br/>
+{% for element in tab4 %}
+	>{{element}}<<br/><br/>
+{% endfor %}
+
+{% for element in tab3 %}
+
+	{{element}}
+{% else %}
+	Tablica jest pusta
+{%  endfor %}
+<br/>
+{% for element in tab4 %}
+	
+		>{{element}}
+		
+		{%  if loop.first %}
+		Pierwszy element
+		{% endif %}
+		
+		{%  if loop.last %}
+		ostatni element
+		{% endif %}
+		
+		{%  if loop.index is odd %}
+			nieparzysty
+		{% endif %}
+		{%  if loop.index is even %}
+			parzysty
+		{% endif %}
+		<br/>
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
